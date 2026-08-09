@@ -1,3 +1,11 @@
+<script lang="ts">
+	import CodeExample from '$lib/CodeExample.svelte';
+	import GuideList from '$lib/GuideList.svelte';
+	import MigratedProjects from '$lib/MigratedProjects.svelte';
+
+	let { data } = $props();
+</script>
+
 <svelte:head>
 	<title>ES Modules - The JavaScript module system</title>
 	<meta name="description" content="A guide to ES modules, the module system of JavaScript." />
@@ -12,15 +20,43 @@
 
 <main class="page">
 	<div class="container">
-		<header>
+		<header class="hero">
 			<p class="eyebrow">esmodule.com</p>
 			<h1>What are <span class="highlight">ES modules</span>?</h1>
+
+			<p class="intro">TODO: explain briefly what ES modules are</p>
+
+			<p class="jump">
+				<a href="#example">See an example</a>
+				<a href="#migrate">Migrate a project</a>
+			</p>
 		</header>
+	</div>
 
-		<div class="description">
-			<p>TODO</p>
-		</div>
+	<div class="container bleed">
+		<section aria-labelledby="example">
+			<h2 id="example">How it looks</h2>
 
+			<CodeExample {...data.examples} />
+		</section>
+	</div>
+
+	<div class="container">
+		<section aria-labelledby="migrate">
+			<h2 id="migrate">Migration guides</h2>
+
+			<p class="section-intro">
+				If you want to migrate your project to ES modules, check out the guides for one which covers
+				your stack!
+			</p>
+
+			<GuideList guides={data.guides} />
+		</section>
+	</div>
+
+	<MigratedProjects />
+
+	<div class="container">
 		<footer>
 			<a href="https://e18e.dev" target="_blank" rel="noopener noreferrer">powered by e18e.dev</a>
 		</footer>
@@ -30,17 +66,8 @@
 <style>
 	.page {
 		min-height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 6rem 1.5rem 3rem;
+		padding: 6rem 0 4rem;
 		box-sizing: border-box;
-	}
-
-	.container {
-		width: 100%;
-		max-width: 40rem;
-		container-type: inline-size;
 	}
 
 	.eyebrow {
@@ -68,24 +95,70 @@
 		box-decoration-break: clone;
 	}
 
-	.description {
-		margin-top: 2rem;
-		padding: 1.5rem;
-		background: var(--surface);
-		border: 1px solid var(--border);
-		border-left: 3px solid var(--accent);
-		border-radius: 8px;
+	.intro {
+		margin: 1.5rem 0 0;
+		font-size: 1.0625rem;
+		line-height: 1.7;
+		color: var(--muted);
 	}
 
-	.description p {
-		margin: 0;
+	.jump {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin: 1.5rem 0 0;
+	}
+
+	.jump a {
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
+		line-height: 1;
+		padding: 0.6rem 0.9rem;
+		color: var(--text);
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		text-decoration: none;
+		transition:
+			border-color 0.15s,
+			background 0.15s;
+	}
+
+	.jump a:first-child {
+		box-shadow: inset 0 -0.18em var(--accent-tint);
+	}
+
+	.jump a:hover {
+		border-color: var(--border-strong);
+		background: var(--accent-tint);
+	}
+
+	section {
+		margin-top: 4rem;
+	}
+
+	h2 {
+		font-family: var(--font-mono);
+		font-size: 1.25rem;
+		font-weight: 700;
+		letter-spacing: -0.01em;
+		margin: 0 0 1rem;
+		scroll-margin-top: 2rem;
+	}
+
+	section p {
+		margin: 0 0 1rem;
 		font-size: 1rem;
 		line-height: 1.7;
 		color: var(--muted);
 	}
 
+	.section-intro {
+		margin-bottom: 1.5rem;
+	}
+
 	footer {
-		margin-top: 2.5rem;
+		margin-top: 0;
 	}
 
 	footer a {

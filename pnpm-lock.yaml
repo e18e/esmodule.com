@@ -45,6 +45,9 @@ importers:
       globals:
         specifier: ^17.9.0
         version: 17.9.0
+      marked:
+        specifier: ^18.0.9
+        version: 18.0.9
       playwright:
         specifier: ^1.62.1
         version: 1.62.1
@@ -1285,6 +1288,11 @@ packages:
 
   magic-string@1.1.0:
     resolution: {integrity: sha512-kS3VHe0nEPST2saQV4Rbkchcd3UBRkVTQHo1D3h/ZTwFDhai/mfKkmtPAtD129EOI7K3HlHIsFOt0WrI2/oU9g==}
+
+  marked@18.0.9:
+    resolution: {integrity: sha512-/Sa4qiiHZxf0/FQdBBowr9q4r10krCwMvpK48FUBdXdUXScDxiQGR9zCPrFgRVR5LU3iySOiIjy09ZQvADir1w==}
+    engines: {node: '>= 20'}
+    hasBin: true
 
   mdast-util-to-hast@13.2.1:
     resolution: {integrity: sha512-cctsq2wp5vTsLIcaymblUriiTcZd0CwWtCbLvrOzYCDZoWyMNV8sZ7krj09FSnsiJi3WVsHLM4k6Dq/yaPyCXA==}
@@ -2831,6 +2839,8 @@ snapshots:
   magic-string@1.1.0:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  marked@18.0.9: {}
 
   mdast-util-to-hast@13.2.1:
     dependencies:

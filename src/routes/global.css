@@ -3,6 +3,10 @@
 	--font-sans:
 		ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
+	/* The two main widths */
+	--width-content: 40rem;
+	--width-bleed: 56rem;
+
 	--js-yellow: #f7df1e;
 
 	--bg: #fdfdfb;
@@ -71,4 +75,47 @@ pre,
 kbd,
 samp {
 	font-family: var(--font-mono);
+}
+
+.container {
+	width: 100%;
+	max-width: var(--width-content);
+	margin: 0 auto;
+	padding: 0 1.5rem;
+	box-sizing: border-box;
+	container-type: inline-size;
+}
+
+.container.bleed {
+	max-width: var(--width-bleed);
+}
+
+.shiki {
+	margin: 0;
+	padding: 0.9rem 1rem;
+	overflow-x: auto;
+	font-size: 0.8125rem;
+	line-height: 1.6;
+	background: var(--code-bg);
+}
+
+.shiki,
+.shiki span {
+	color: var(--shiki-light);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		.shiki,
+		.shiki span {
+			color: var(--shiki-dark);
+		}
+	}
+}
+
+:root[data-theme='dark'] {
+	.shiki,
+	.shiki span {
+		color: var(--shiki-dark);
+	}
 }
