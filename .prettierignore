@@ -1,0 +1,5 @@
+/package-lock.json
+/pnpm-lock.yaml
+/static/
+/worker-configuration.d.ts
+/.svelte-kit
