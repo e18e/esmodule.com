@@ -11,7 +11,7 @@ const config = {
 		experimental: { remoteFunctions: true },
 		prerender: {
 			origin: 'https://esmodule.com',
-			entries: ['/', '/llms.txt']
+			entries: ['/']
 		}
 	}
 };

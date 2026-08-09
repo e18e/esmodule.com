@@ -7,7 +7,7 @@ import svelteConfig from './svelte.config.js';
 
 export default defineConfig(
 	{
-		ignores: ['./worker-configuration.d.ts', './.svelte-kit']
+		ignores: ['./worker-configuration.d.ts', './.svelte-kit', '/.wrangler']
 	},
 	js.configs.recommended,
 	ts.configs.recommended,

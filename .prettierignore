@@ -3,3 +3,4 @@
 /static/
 /worker-configuration.d.ts
 /.svelte-kit
+/.wrangler
