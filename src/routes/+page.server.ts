@@ -1,5 +1,6 @@
 import { list_guides } from '$lib/server/guides';
 import { get_highlighter, highlight } from '$lib/server/highlight';
+import { resolve_framework_kinds } from '$lib/server/frameworks';
 import { count_esm_packages } from '$lib/server/package-counts';
 import cjs_app from '../../examples/cjs/app.cjs?raw';
 import cjs_math from '../../examples/cjs/math.cjs?raw';
@@ -33,6 +34,7 @@ export const load: PageServerLoad = async () => {
 			cjs: render(sources.cjs)
 		},
 		guides: list_guides(),
-		esm_package_count: await count_esm_packages()
+		esm_package_count: await count_esm_packages(),
+		frameworks: await resolve_framework_kinds()
 	};
 };

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import CodeExample from '$lib/CodeExample.svelte';
 	import GuideList from '$lib/GuideList.svelte';
-	import MigratedProjects from '$lib/MigratedProjects.svelte';
+	import Frameworks from '$lib/Frameworks.svelte';
+	import PackageCount from '$lib/PackageCount.svelte';
 
 	let { data } = $props();
 </script>
@@ -52,11 +53,21 @@
 
 			<GuideList guides={data.guides} />
 		</section>
+
+		<PackageCount count={data.esm_package_count} />
 	</div>
 
-	<MigratedProjects count={data.esm_package_count} />
+	<div class="container bleed">
+		<section aria-labelledby="frameworks">
+			<h2 id="frameworks">Frameworks</h2>
 
-	<div class="container">
+			<p class="section-intro">Whether the frameworks you already use publish ES modules on npm.</p>
+
+			<Frameworks frameworks={data.frameworks} />
+		</section>
+	</div>
+
+	<div class="container bleed">
 		<footer>
 			<a href="https://e18e.dev" target="_blank" rel="noopener noreferrer">powered by e18e.dev</a>
 		</footer>
@@ -158,7 +169,9 @@
 	}
 
 	footer {
-		margin-top: 0;
+		margin-top: 5rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--border);
 	}
 
 	footer a {
