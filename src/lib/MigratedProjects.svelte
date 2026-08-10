@@ -1,15 +1,27 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { recent_migrations } from '$lib/migrated-projects.remote';
-	import { esm_package_count, recent_migration_limit } from '$lib/migrated-projects';
+	import { esm_package_count, recent_migrations } from '$lib/migrated-projects.remote';
+	import { recent_migration_limit } from '$lib/migrated-projects';
 
 	interface Props {
-		count?: number;
+		count: number;
 	}
 
-	let { count = esm_package_count }: Props = $props();
+	let { count }: Props = $props();
 
-	const formatted_count = $derived(new Intl.NumberFormat('en').format(count));
+	let live_count = $state<number | null>(null);
+
+	$effect(() => {
+		esm_package_count()
+			.then((value) => {
+				live_count = value;
+			})
+			.catch(() => {
+				// leave the build-time count in place
+			});
+	});
+
+	const formatted_count = $derived(new Intl.NumberFormat('en').format(live_count ?? count));
 	const date_format = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'short' });
 
 	function format_date(iso: string) {
@@ -40,9 +52,11 @@
 							<span class="name">{pkg.name}</span>
 							<time datetime={pkg.migrated_at}>{format_date(pkg.migrated_at)}</time>
 							<span class="links">
-								<a href={pkg.npm_url} target="_blank" rel="noopener noreferrer">npm</a>
+								<a href={pkg.npm_url} target="_blank" rel="external noopener noreferrer">npm</a>
 								{#if pkg.github_url}
-									<a href={pkg.github_url} target="_blank" rel="noopener noreferrer">github</a>
+									<a href={pkg.github_url} target="_blank" rel="external noopener noreferrer">
+										github
+									</a>
 								{/if}
 							</span>
 						</li>

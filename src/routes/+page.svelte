@@ -54,7 +54,7 @@
 		</section>
 	</div>
 
-	<MigratedProjects />
+	<MigratedProjects count={data.esm_package_count} />
 
 	<div class="container">
 		<footer>
