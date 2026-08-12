@@ -34,8 +34,8 @@
 			<p class="intro">
 				ES modules enable better code organization, dependency management, and enable tools to
 				perform static analysis for optimizations like tree-shaking. Since its official addition to
-				the JavaScript specification, ES modules are now widely available in modern browsers,
-				Node.js, and bundlers, making it the de facto standard for JavaScript development.
+				the JavaScript specification, ES modules are now widely adaopted in modern browsers and
+				other runtime environments.
 			</p>
 
 			<p class="jump">
