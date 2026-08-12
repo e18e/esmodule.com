@@ -25,10 +25,18 @@
 			<p class="eyebrow">esmodule.com</p>
 			<h1>What are <span class="highlight">ES modules</span>?</h1>
 
-			<p class="intro">Introduced in the ES6 specification, ECMAScript modules (ES modules or ESM) is the standardized format for packaging and organizing JavaScript code. It provides a native, standard way to import and export code across files and packages.</p>
+			<p class="intro">
+				Introduced in the ES6 specification, ECMAScript modules (ES modules or ESM) is the
+				standardized format for packaging and organizing JavaScript code. It provides a native,
+				standard way to import and export code across files and packages.
+			</p>
 
-			<p>ES modules enable better code organization, dependency management, and enable tools to perform static analysis for optimizations like tree-shaking. Since its official addition to the JavaScript specification, ES modules are now widely available in modern browsers, Node.js, and bundlers, making it the de facto standard for JavaScript development.</p>
-
+			<p class="intro">
+				ES modules enable better code organization, dependency management, and enable tools to
+				perform static analysis for optimizations like tree-shaking. Since its official addition to
+				the JavaScript specification, ES modules are now widely available in modern browsers,
+				Node.js, and bundlers, making it the de facto standard for JavaScript development.
+			</p>
 
 			<p class="jump">
 				<a href="#example">See an example</a>

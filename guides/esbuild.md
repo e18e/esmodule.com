@@ -1,12 +1,10 @@
 ---
 title: esbuild
 stack: Bundler
-description: Switch an esbuild build to ESM output and drop the CommonJS bundle.
+description: Update from cjs to esm output in esbuild
 ---
 
-esbuild is a lightning-fast JavaScript bundler built in Go. It handles ESM natively
-and makes converting to ESM-only output straightforward. Most of the work here is
-removing the CommonJS output you no longer need.
+esbuild is a JavaScript bundler built in Go. It handles ESM natively and bundles for the browser out of the box. Most of the work here is removing the CommonJS output you no longer need.
 
 ## 1. Mark the package as ESM
 
@@ -25,8 +23,7 @@ tool) can keep the `.cjs` extension.
 
 ## 2. Emit a single ESM bundle
 
-Configure esbuild to output only ESM format. If you have an esbuild config file,
-update it to remove the CommonJS output:
+Since the default for esbuild is esm, you can omit the `format` parameter if you've previously defined `cjs` as its value.
 
 ```js
 import * as esbuild from 'esbuild';
@@ -34,13 +31,40 @@ import * as esbuild from 'esbuild';
 await esbuild.build({
 	entryPoints: ['src/index.js'],
 	bundle: true,
+	outfile: 'dist/index.js'
+});
+```
+
+Alternatively, if you are using the cli:
+
+```bash
+esbuild "src/index.js" --bundle --outfile="dist/index.js"
+```
+
+If you were previously building both CJS and ESM formats, remove the separate
+build step or output for CommonJS.
+
+### "platform" flag
+
+If you are using the `platform` parameter with the value of `node` and `bundle` is set to true, this will default to the `cjs` format. In this case, you need to explicitly define the `format` to `esm`:
+
+```js
+import * as esbuild from 'esbuild';
+
+await esbuild.build({
+	entryPoints: ['src/index.js'],
+	platform: 'node',
+	bundle: true,
 	format: 'esm',
 	outfile: 'dist/index.js'
 });
 ```
 
-If you were previously building both CJS and ESM formats, remove the separate
-build step or output for CommonJS.
+and in the cli:
+
+```bash
+esbuild "src/index.js" --platform=node --bundle --format=esm --outfile="dist/index.js"
+```
 
 ## 3. Point `exports` at the bundle
 
