@@ -9,7 +9,7 @@ esbuild is a JavaScript bundler built in Go. It handles ESM natively and bundles
 ## 1. Mark the package as ESM
 
 Add `type: "module"` to your `package.json`. Every `.js` file in the package is
-now an ES module.
+now treated as an ES module.
 
 ```json
 {
@@ -23,7 +23,7 @@ tool) can keep the `.cjs` extension.
 
 ## 2. Emit a single ESM bundle
 
-Since the default for esbuild is esm, you can omit the `format` parameter if you've previously defined `cjs` as its value.
+Since the default for esbuild is ESM, you can omit the `format` parameter if you've previously defined `cjs` as its value.
 
 ```js
 import * as esbuild from 'esbuild';
@@ -35,7 +35,7 @@ await esbuild.build({
 });
 ```
 
-Alternatively, if you are using the cli:
+Alternatively, if you are using the CLI:
 
 ```bash
 esbuild "src/index.js" --bundle --outfile="dist/index.js"
@@ -60,7 +60,7 @@ await esbuild.build({
 });
 ```
 
-and in the cli:
+and in the CLI:
 
 ```bash
 esbuild "src/index.js" --platform=node --bundle --format=esm --outfile="dist/index.js"
