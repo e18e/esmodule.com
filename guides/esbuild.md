@@ -1,7 +1,7 @@
 ---
 title: esbuild
 stack: Bundler
-description: Update from cjs to esm output in esbuild
+description: Update from CommonJS to ES Module output in esbuild
 ---
 
 esbuild is a JavaScript bundler built in Go. It handles ESM natively and bundles for the browser out of the box. Most of the work here is removing the CommonJS output you no longer need.
