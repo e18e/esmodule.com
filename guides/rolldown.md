@@ -1,11 +1,12 @@
 ---
-title: Rollup
+title: Rolldown
 stack: Bundler
-description: Switch a Rollup build to ESM output and drop the CommonJS bundle.
+description: Switch a Rolldown build to ESM output and drop the CommonJS bundle.
 ---
 
-Rollup has been ESM-first since the beginning, so most of the work here is
-removing the CommonJS output you no longer need.
+Rolldown is built on ESM-first principles from the ground up, making it an ideal
+choice for ESM-only packages. Most of the work here is removing the CommonJS
+output you no longer need.
 
 ## 1. Mark the package as ESM
 
@@ -24,7 +25,7 @@ tool) can keep the `.cjs` extension.
 
 ## 2. Emit a single ESM bundle
 
-Drop the `cjs` entry from your output config:
+Drop the `cjs` entry from your Rolldown config:
 
 ```ts
 export default {
