@@ -46,7 +46,7 @@ build step or output for CommonJS.
 
 ### "platform" flag
 
-If you are using the `platform` parameter with the value of `node` and `bundle` is set to true, this will default to the `cjs` format. In this case, you need to explicitly define the `format` to `esm`:
+If you are using the `platform` parameter with the value of `node` and `bundle` is set to `true`, this will default to the `cjs` format. In this case, you need to explicitly define the `format` to `esm`:
 
 ```js
 import * as esbuild from 'esbuild';

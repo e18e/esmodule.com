@@ -10,7 +10,7 @@ removing the CommonJS output you no longer need.
 ## 1. Mark the package as ESM
 
 Add `type: "module"` to your `package.json`. Every `.js` file in the package is
-now an ES module.
+now treated as an ES module.
 
 ```json
 {
