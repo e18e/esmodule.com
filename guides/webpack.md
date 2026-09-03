@@ -4,7 +4,7 @@ stack: Bundler
 description: Update webpack to output ES Modules
 ---
 
-webpack is one of the early bundlers for the JavaScript ecosystem. Currently, support for ESM-format outputs is still under `experiements`
+webpack is one of the early bundlers for the JavaScript ecosystem. Currently, support for ESM-format outputs is still under `experiments`
 
 ## 1. Mark the package as ESM
 
