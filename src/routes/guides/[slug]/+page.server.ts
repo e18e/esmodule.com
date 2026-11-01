@@ -1,4 +1,4 @@
-import { get_guide, list_guides } from '$lib/server/guides';
+import { get_guide, list_guides } from '#lib/server/guides.js';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator, PageServerLoad } from './$types';
 

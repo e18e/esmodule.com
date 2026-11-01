@@ -2,8 +2,8 @@
 	import '@fontsource/iosevka/400.css';
 	import '@fontsource/iosevka/500.css';
 	import '@fontsource/iosevka/700.css';
-	import favicon from '$lib/assets/favicon.svg';
-	import Controls from '$lib/Controls.svelte';
+	import favicon from '#lib/assets/favicon.svg';
+	import Controls from '#lib/Controls.svelte';
 	import './global.css';
 
 	let { children } = $props();

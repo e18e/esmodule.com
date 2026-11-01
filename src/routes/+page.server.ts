@@ -1,7 +1,7 @@
-import { list_guides } from '$lib/server/guides';
-import { get_highlighter, highlight } from '$lib/server/highlight';
-import { resolve_framework_kinds } from '$lib/server/frameworks';
-import { count_esm_packages } from '$lib/server/package-counts';
+import { list_guides } from '#lib/server/guides.js';
+import { get_highlighter, highlight } from '#lib/server/highlight.js';
+import { resolve_framework_kinds } from '#lib/server/frameworks.js';
+import { count_esm_packages } from '#lib/server/package-counts.js';
 import cjs_app from '../../examples/cjs/app.cjs?raw';
 import cjs_math from '../../examples/cjs/math.cjs?raw';
 import esm_app from '../../examples/esm/app.js?raw';

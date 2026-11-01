@@ -1,8 +1,8 @@
 <script lang="ts">
-	import CodeExample from '$lib/CodeExample.svelte';
-	import GuideList from '$lib/GuideList.svelte';
-	import Frameworks from '$lib/Frameworks.svelte';
-	import PackageCount from '$lib/PackageCount.svelte';
+	import CodeExample from '#lib/CodeExample.svelte';
+	import GuideList from '#lib/GuideList.svelte';
+	import Frameworks from '#lib/Frameworks.svelte';
+	import PackageCount from '#lib/PackageCount.svelte';
 
 	let { data } = $props();
 </script>
