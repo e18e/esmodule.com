@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { kind_label, publishes_esm, type CheckedFramework } from '$lib/frameworks';
+	import { kind_label, publishes_esm, type CheckedFramework } from '#lib/frameworks.js';
 
 	interface Props {
 		frameworks: CheckedFramework[];

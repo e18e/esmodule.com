@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import type { GuideMeta } from '$lib/guides';
+	import type { GuideMeta } from '#lib/guides.js';
 
 	interface Props {
 		guides: GuideMeta[];
