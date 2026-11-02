@@ -50,6 +50,7 @@
 		"@fontsource/iosevka": "^5.3.0"
 	},
 	"imports": {
+		"#lib": "./src/lib/index.js",
 		"#lib/*": "./src/lib/*"
 	}
 }
